@@ -1,0 +1,13 @@
+int opAmpPin = A0; // define analog pin for op-amp input
+int opAmpValue;    // variable to store op-amp input value
+
+void setup() {
+  Serial.begin(9600); // initialize serial communication
+}
+
+void loop() {
+  opAmpValue = analogRead(opAmpPin); // read analog input from op-amp pin
+  Serial.print("Op-amp value: ");
+  Serial.println(opAmpValue); // print op-amp input value to serial monitor
+  delay(100); // delay for stability
+}
