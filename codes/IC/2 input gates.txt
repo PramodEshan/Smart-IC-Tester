@@ -1,0 +1,49 @@
+for(int l=0;l<3;l++){
+    //lcd.print(analogRead(analogpins[l]));
+    if(analogRead(analogpins[l])>400)
+    {
+      output[l] = 1;
+    }
+    else
+    {
+      output[l] = 0;
+    }
+    //lcd.print(output[l]);    
+  }
+  if(digitalRead(pin3)==1)
+  {
+    if(output[1]==1){
+      lcd.print("NAND GATE");
+      digitalWrite(GREEN, HIGH);
+      delay(1000);
+    }
+    else{
+      if(output[2]==1){
+      	lcd.print("XNOR GATE");
+        digitalWrite(GREEN, HIGH);
+      	delay(1000);
+      }
+      else{
+        lcd.print("XNOR GATE");
+        digitalWrite(GREEN, HIGH);
+      	delay(1000);
+      }
+    }
+  }
+  else{
+    if(output[0]==0){
+      lcd.print("AND GATE");
+      digitalWrite(GREEN, HIGH);
+      delay(1000);
+    }
+    else{
+      if(output[2]==1){
+        lcd.print("OR GATE");
+        digitalWrite(GREEN, HIGH);
+      	delay(1000);
+      }
+      else{
+        lcd.print("XOR GATE");
+        digitalWrite(GREEN, HIGH);
+      	delay(1000);
+      }
